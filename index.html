@@ -1,172 +1,209 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Camera Zoom Pro - Chụp Ảnh & Quay Video Cận Cảnh Đỉnh Cao</title>
+    <title>Camera Zoom Pro | Professional Photography</title>
     
-    <meta name="apple-itunes-app" content="app-id=6752850286"> 
+    <meta name="apple-itunes-app" content="app-id=6752850286">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f7fa;
-            color: #333;
-            line-height: 1.6;
-            text-align: center;
-        }
-        .container {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
-        header {
-            padding: 20px 0;
-            border-bottom: 1px solid #eee;
-            margin-bottom: 30px;
-        }
-        header h1 {
-            color: #2c3e50;
-            font-size: 2.8em;
-            margin-bottom: 10px;
-        }
-        header p {
-            color: #7f8c8d;
-            font-size: 1.2em;
-        }
-        .features {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            margin: 40px 0;
-        }
-        .feature-item {
-            flex: 1 1 calc(33% - 60px); /* 3 items per row on large screens */
-            min-width: 280px;
-            background-color: #ecf0f1;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
-        }
-        .feature-item:hover {
-            transform: translateY(-5px);
-        }
-        .feature-item h3 {
-            color: #34495e;
-            font-size: 1.5em;
-            margin-bottom: 15px;
-        }
-        .feature-item p {
-            font-size: 1em;
-            color: #555;
-        }
-        .cta-button {
-            display: inline-block;
-            background-color: #3498db;
-            color: #fff;
-            padding: 15px 30px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-size: 1.4em;
-            font-weight: bold;
-            margin-top: 30px;
-            transition: background-color 0.3s ease;
-        }
-        .cta-button:hover {
-            background-color: #2980b9;
-        }
-        footer {
-            margin-top: 50px;
-            padding: 20px 0;
-            border-top: 1px solid #eee;
-            color: #7f8c8d;
-            font-size: 0.9em;
-        }
-        .app-screenshot {
-            width: 100%;
-            max-width: 600px; /* Adjust as needed */
-            height: auto;
-            border-radius: 10px;
-            margin-top: 30px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        :root {
+            --primary-color: #3498db;
+            --dark-bg: #121212;
+            --card-bg: #1e1e1e;
+            --text-main: #ffffff;
+            --text-sub: #b3b3b3;
         }
 
-        /* Responsive adjustments */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80&w=1600') center/cover;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: var(--text-sub);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Introduction Section */
+        .intro {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .intro-img img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(52, 152, 219, 0.3);
+        }
+
+        .intro-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .intro-text p {
+            font-size: 1.1rem;
+            color: var(--text-sub);
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        /* CTA Button - Universal Link */
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+        }
+
+        .cta-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.6);
+        }
+
+        /* Features Section */
+        .features {
+            background-color: var(--card-bg);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 50px auto 0;
+        }
+
+        .feature-card {
+            background: #252525;
+            padding: 40px;
+            border-radius: 15px;
+            border: 1px solid #333;
+            transition: border 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: var(--primary-color);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        footer {
+            padding: 50px;
+            text-align: center;
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
-            .container {
-                margin: 20px;
-                padding: 15px;
-            }
-            header h1 {
-                font-size: 2em;
-            }
-            header p {
-                font-size: 1em;
-            }
-            .features {
-                flex-direction: column;
-                align-items: center;
-            }
-            .feature-item {
-                flex: 1 1 90%;
-            }
-            .cta-button {
-                font-size: 1.2em;
-                padding: 12px 25px;
-            }
+            .intro { grid-template-columns: 1fr; text-align: center; }
+            .hero-content h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Camera Zoom Pro</h1>
-            <p>Trải nghiệm chụp ảnh và quay video cận cảnh đỉnh cao trên iPhone của bạn!</p>
-            <img src="placeholder-screenshot.png" alt="Ảnh chụp màn hình ứng dụng Camera Zoom Pro" class="app-screenshot">
-        </header>
 
-        <section class="features">
-            <div class="feature-item">
-                <h3>Phóng To Cực Đại</h3>
-                <p>Khám phá chi tiết nhỏ nhất với khả năng zoom kỹ thuật số mạnh mẽ, rõ nét.</p>
-            </div>
-            <div class="feature-item">
-                <h3>Quay Video Cận Cảnh</h3>
-                <p>Ghi lại những khoảnh khắc đặc biệt với chất lượng video HD ngay cả khi zoom tối đa.</p>
-            </div>
-            <div class="feature-item">
-                <h3>Chụp Ảnh Sắc Nét</h3>
-                <p>Chụp ảnh chuyên nghiệp với độ phân giải cao, hỗ trợ điều chỉnh lấy nét thủ công.</p>
-            </div>
-             <div class="feature-item">
-                <h3>Đèn Pin & Ánh Sáng</h3>
-                <p>Sử dụng đèn pin tích hợp để chiếu sáng chủ thể trong điều kiện thiếu sáng.</p>
-            </div>
-            <div class="feature-item">
-                <h3>Giao Diện Thân Thiện</h3>
-                <p>Dễ dàng sử dụng với thiết kế trực quan, phù hợp cho mọi đối tượng.</p>
-            </div>
-            <div class="feature-item">
-                <h3>Tùy Chỉnh Chuyên Sâu</h3>
-                <p>Kiểm soát cân bằng trắng, độ phơi sáng và nhiều tùy chọn khác để có bức ảnh hoàn hảo.</p>
-            </div>
-        </section>
+    <section class="hero">
+        <div class="hero-content" data-aos="zoom-in">
+            <h1>CAMERA ZOOM PRO</h1>
+            <p>Expand your vision, capture every hidden detail.</p>
+        </div>
+    </section>
 
-        <section class="cta">
-            <h2>Sẵn sàng trải nghiệm Camera Zoom Pro?</h2>
-            <a href="https://vixtorhoang.github.io" class="cta-button">Tải Ngay Từ App Store</a>
-        </section>
-        
-        <footer>
-            <p>&copy; 2023 Camera Zoom Pro. Mọi quyền được bảo lưu.</p>
-        </footer>
-    </div>
+    <section class="intro">
+        <div class="intro-img" data-aos="fade-right">
+            <img src="https://images.unsplash.com/photo-1510127034890-ba27508e9f1c?auto=format&fit=crop&q=80&w=1000" alt="App Preview">
+        </div>
+        <div class="intro-text" data-aos="fade-left">
+            <h2>Redefining iPhone Optics</h2>
+            <p>Powered by advanced image processing, Camera Zoom Pro delivers up to 100x magnification with stunning clarity. Perfect for wildlife observation, sports events, and long-range photography.</p>
+            
+            <a href="https://vixtorhoang.github.io" class="cta-btn">OPEN IN APP</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <h2 data-aos="fade-up">Breakthrough Features</h2>
+        <div class="feature-grid">
+            <div class="feature-card" data-aos="flip-left" data-aos-delay="100">
+                <h3>Super Zoom</h3>
+                <p>AI-driven algorithms ensure image stability even at extreme magnification levels.</p>
+            </div>
+            <div class="feature-card" data-aos="flip-left" data-aos-delay="200">
+                <h3>Night Sight</h3>
+                <p>Enhance low-light captures with noise reduction for crystal clear night shots.</p>
+            </div>
+            <div class="feature-card" data-aos="flip-left" data-aos-delay="300">
+                <h3>RAW Support</h3>
+                <p>Capture in Pro RAW format for ultimate control in your post-processing workflow.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 Camera Zoom Pro by VixtorHoang. All rights reserved.
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
 </body>
 </html>
