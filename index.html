@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Camera Zoom Pro | Professional Photography</title>
+    <title>Camera ZoomX Pro | Professional Photography</title>
     
     <meta name="apple-itunes-app" content="app-id=6752850286">
     
@@ -12,9 +12,15 @@
 
     <style>
         :root {
-            --primary-color: #3498db;
-            --dark-bg: #121212;
-            --card-bg: #1e1e1e;
+            /* Primary Colors from your palette */
+            --primary-1000: #99ff7a; /* Neon Green */
+            --primary-700: #b5ff9b;
+            --primary-color: var(--primary-1000);
+            
+            /* Dark scale from your palette */
+            --dark-1000: #1a1a1a;
+            --dark-900: #262626;
+            --dark-800: #333333;
             --text-main: #ffffff;
             --text-sub: #b3b3b3;
         }
@@ -27,7 +33,7 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--dark-bg);
+            background-color: var(--dark-1000);
             color: var(--text-main);
             overflow-x: hidden;
         }
@@ -35,29 +41,43 @@
         /* Hero Section */
         .hero {
             position: relative;
-            height: 80vh;
+            height: 85vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
                         url('https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80&w=1600') center/cover;
             border-bottom: 2px solid var(--primary-color);
         }
 
         .hero-content h1 {
-            font-size: 4rem;
+            font-size: 4.5rem;
             font-weight: 700;
-            letter-spacing: -1px;
-            margin-bottom: 10px;
-            text-transform: uppercase;
+            letter-spacing: -2px;
+            margin-bottom: 15px;
+            color: var(--text-main);
         }
 
         .hero-content p {
-            font-size: 1.2rem;
-            color: var(--text-sub);
-            max-width: 600px;
-            margin: 0 auto;
+            font-size: 1.3rem;
+            color: var(--primary-700);
+            margin-bottom: 30px;
+        }
+
+        /* App Store Button Style */
+        .app-store-btn {
+            display: inline-block;
+            transition: transform 0.2s ease;
+        }
+
+        .app-store-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .app-store-btn img {
+            height: 60px; /* Standard height for App Store Badge */
+            width: auto;
         }
 
         /* Introduction Section */
@@ -67,143 +87,132 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            gap: 60px;
             align-items: center;
         }
 
         .intro-img img {
             width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(52, 152, 219, 0.3);
+            border-radius: 24px;
+            box-shadow: 0 0 40px rgba(153, 255, 122, 0.15);
+            border: 1px solid var(--dark-800);
         }
 
         .intro-text h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+            font-size: 2.8rem;
+            margin-bottom: 25px;
             color: var(--primary-color);
         }
 
         .intro-text p {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             color: var(--text-sub);
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             line-height: 1.8;
-        }
-
-        /* CTA Button - Universal Link */
-        .cta-btn {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: white;
-            padding: 15px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
-        }
-
-        .cta-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.6);
         }
 
         /* Features Section */
         .features {
-            background-color: var(--card-bg);
-            padding: 80px 20px;
+            background-color: var(--dark-900);
+            padding: 100px 20px;
             text-align: center;
         }
 
         .feature-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             max-width: 1100px;
-            margin: 50px auto 0;
+            margin: 60px auto 0;
         }
 
         .feature-card {
-            background: #252525;
-            padding: 40px;
-            border-radius: 15px;
-            border: 1px solid #333;
-            transition: border 0.3s ease;
+            background: var(--dark-800);
+            padding: 45px;
+            border-radius: 20px;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
         }
 
         .feature-card:hover {
             border-color: var(--primary-color);
+            transform: translateY(-10px);
         }
 
         .feature-card h3 {
             margin-bottom: 15px;
             color: var(--primary-color);
+            font-size: 1.5rem;
         }
 
         footer {
-            padding: 50px;
+            padding: 60px;
             text-align: center;
-            color: #555;
+            color: #666;
             font-size: 0.9rem;
+            border-top: 1px solid var(--dark-900);
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .intro { grid-template-columns: 1fr; text-align: center; }
-            .hero-content h1 { font-size: 2.5rem; }
+            .hero-content h1 { font-size: 3rem; }
+            .app-store-btn img { height: 50px; }
         }
     </style>
 </head>
 <body>
 
     <section class="hero">
-        <div class="hero-content" data-aos="zoom-in">
-            <h1>CAMERA ZOOM PRO</h1>
+        <div class="hero-content" data-aos="fade-up">
+            <h1>CAMERA ZOOMX PRO</h1>
             <p>Expand your vision, capture every hidden detail.</p>
+            
+            <a href="https://apps.apple.com/us/app/id6752850286" class="app-store-btn">
+                <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1276560000&h=7e7b68fad3d018ee560adcde18c402d5" alt="Download on the App Store">
+            </a>
         </div>
     </section>
 
     <section class="intro">
         <div class="intro-img" data-aos="fade-right">
-            <img src="https://images.unsplash.com/photo-1510127034890-ba27508e9f1c?auto=format&fit=crop&q=80&w=1000" alt="App Preview">
+            <img src="https://images.unsplash.com/photo-1510127034890-ba27508e9f1c?auto=format&fit=crop&q=80&w=1000" alt="Camera Zoom in Action">
         </div>
         <div class="intro-text" data-aos="fade-left">
-            <h2>Redefining iPhone Optics</h2>
-            <p>Powered by advanced image processing, Camera Zoom Pro delivers up to 100x magnification with stunning clarity. Perfect for wildlife observation, sports events, and long-range photography.</p>
+            <h2>Next-Gen iPhone Optics</h2>
+            <p>Powered by advanced neural processing, Camera Zoom Pro delivers up to 1000x magnification with stunning clarity. Designed for those who demand more from their iPhone camera.</p>
             
-            <a href="https://vixtorhoang.github.io" class="cta-btn">OPEN IN APP</a>
+            <a href="https://apps.apple.com/us/app/id6752850286" class="app-store-btn">
+                <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1276560000&h=7e7b68fad3d018ee560adcde18c402d5" alt="Download on the App Store">
+            </a>
         </div>
     </section>
 
     <section class="features">
-        <h2 data-aos="fade-up">Breakthrough Features</h2>
+        <h2 data-aos="fade-up">Pro-Level Capabilities</h2>
         <div class="feature-grid">
-            <div class="feature-card" data-aos="flip-left" data-aos-delay="100">
-                <h3>Super Zoom</h3>
-                <p>AI-driven algorithms ensure image stability even at extreme magnification levels.</p>
+            <div class="feature-card" data-aos="zoom-in" data-aos-delay="100">
+                <h3>Neural Zoom</h3>
+                <p>AI-enhanced pixel reconstruction for sharper images at extreme distances.</p>
             </div>
-            <div class="feature-card" data-aos="flip-left" data-aos-delay="200">
-                <h3>Night Sight</h3>
-                <p>Enhance low-light captures with noise reduction for crystal clear night shots.</p>
+            <div class="feature-card" data-aos="zoom-in" data-aos-delay="200">
+                <h3>Night Sight+</h3>
+                <p>Low-light sensor optimization for clear, noise-free night photography.</p>
             </div>
-            <div class="feature-card" data-aos="flip-left" data-aos-delay="300">
-                <h3>RAW Support</h3>
-                <p>Capture in Pro RAW format for ultimate control in your post-processing workflow.</p>
+            <div class="feature-card" data-aos="zoom-in" data-aos-delay="300">
+                <h3>Pro RAW</h3>
+                <p>Full uncompressed data capture for ultimate post-processing freedom.</p>
             </div>
         </div>
     </section>
 
     <footer>
-        &copy; 2026 Camera Zoom Pro by VixtorHoang. All rights reserved.
+        &copy; 2026 Camera ZoomX Pro by HeroLabs. <br>
+        Download the future of mobile photography today.
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({
-            duration: 1000,
-            once: true
-        });
+        AOS.init({ duration: 1000, once: true });
     </script>
 </body>
 </html>
